@@ -1,0 +1,50 @@
+name: gnn-systems
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+dependencies:
+  # Core
+  - python=3.10
+  - pip
+  - numpy
+  - scipy
+  - pandas
+  - matplotlib
+  - seaborn
+  - tqdm
+
+  # PyTorch + CUDA
+  - pytorch=2.1.2
+  - pytorch-cuda=11.8
+  - torchvision
+  - torchaudio
+
+  # Systems / profiling helpers
+  - psutil
+  - pybind11
+  - cmake
+  - ninja
+
+  # Development
+  - ipython
+  - jupyterlab
+  - black
+  - isort
+  - mypy
+
+  # Pip-only packages
+  - pip:
+      # PyTorch Geometric core + ops (CUDA wheels)
+      - torch-geometric
+      - torch-scatter
+      - torch-sparse
+      - torch-cluster
+      - torch-spline-conv
+
+      # Triton for custom kernels
+      - triton==2.1.0
+
+      # Profiling / logging
+      - tensorboard
+      - line-profiler
